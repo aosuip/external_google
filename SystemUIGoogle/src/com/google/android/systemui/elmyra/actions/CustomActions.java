@@ -10,7 +10,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-import com.android.internal.util.aosip.aosipUtils;
+import com.android.internal.util.legion.LegionUtils;
 import com.android.systemui.Dependency;
 import com.android.systemui.assist.AssistManager;
 
@@ -46,7 +46,7 @@ public class CustomActions extends Action {
             default:
                 break;
             case 1: // Assistant
-                aosipUtils.switchScreenOn(getContext());
+                LegionUtils.switchScreenOn(getContext());
                 mAssistManager.startAssist(new Bundle() /* args */);
                 break;
             case 2: // Voice search
@@ -55,38 +55,38 @@ public class CustomActions extends Action {
                 }
                 break;
             case 3: // Camera
-                aosipUtils.switchScreenOn(getContext());
+                LegionUtils.switchScreenOn(getContext());
                 launchCamera(getContext());
                 break;
             case 4: // Flashlight
-                aosipUtils.toggleCameraFlash();
+                LegionUtils.toggleCameraFlash();
                 break;
             case 5: // Clear notifications
-                // aosipUtils.clearAllNotifications();
+                // LegionUtils.clearAllNotifications();
                 break;
             case 6: // Volume panel
                 if (isScreenOn) {
-                    aosipUtils.toggleVolumePanel(getContext());
+                    LegionUtils.toggleVolumePanel(getContext());
                 }
                 break;
             case 7: // Screen off
                 if (isScreenOn) {
-                    aosipUtils.switchScreenOff(getContext());
+                    LegionUtils.switchScreenOff(getContext());
                 }
                 break;
             case 8: // Notification panel
                 if (isScreenOn) {
-                    // aosipUtils.toggleNotifications();
+                    // LegionUtils.toggleNotifications();
                 }
                 break;
             case 9: // Screenshot
                 if (isScreenOn) {
-                    aosipUtils.takeScreenshot(true);
+                    LegionUtils.takeScreenshot(true);
                 }
                 break;
             case 10: // QS panel
                 if (isScreenOn) {
-                    // aosipUtils.toggleQsPanel();
+                    // LegionUtils.toggleQsPanel();
                 }
                 break;
             case 11: // Application
@@ -95,7 +95,7 @@ public class CustomActions extends Action {
                 }
                 break;
             case 12: // Ringer modes
-                // aosipUtils.toggleRingerModes(getContext());
+                // LegionUtils.toggleRingerModes(getContext());
                 break;
         }
     }

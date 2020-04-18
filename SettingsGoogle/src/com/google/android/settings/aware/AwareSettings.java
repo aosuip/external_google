@@ -23,7 +23,7 @@ public class AwareSettings extends DashboardFragment {
     }
 
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.OWLSNEST;
+        return MetricsProto.MetricsEvent.LEGION;
     }
 
     public int getPreferenceScreenResId() {
