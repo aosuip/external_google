@@ -1,7 +1,6 @@
 package com.google.android.systemui.statusbar.phone;
 
 import android.widget.ImageView;
-import com.android.internal.util.legion.LegionUtils;
 import com.android.systemui.R;
 import com.android.systemui.Dependency;
 import com.android.systemui.dock.DockManager;
@@ -19,23 +18,5 @@ public class StatusBarGoogle extends StatusBar {
         DockObserver dockObserver = (DockObserver) Dependency.get(DockManager.class);
         dockObserver.setDreamlinerGear((ImageView) mStatusBarWindow.findViewById(R.id.dreamliner_gear));
         dockObserver.setIndicationController(new DockIndicationController(mContext));
-
-        // Enable MotionSense plugin
-        enableOsloPlugin();
-        ((NotificationLockscreenUserManagerGoogle) Dependency.get(NotificationLockscreenUserManager.class)).updateAodVisibilitySettings();
-    }
-
-    @Override
-    public void setLockscreenUser(int i) {
-        super.setLockscreenUser(i);
-        SmartSpaceController.get(this.mContext).reloadData();
-    }
-
-    private void enableOsloPlugin() {
-        if (LegionUtils.isPackageInstalled(mContext, "com.google.oslo")) {
-            LegionUtils.setComponentState(mContext, "com.google.oslo", "com.google.oslo.OsloOverlay", true);
-            LegionUtils.setComponentState(mContext, "com.google.oslo", "com.google.oslo.OsloSensorManager", true);
-            LegionUtils.setComponentState(mContext, "com.google.oslo", "com.google.oslo.service.OsloService", true);
-        }
     }
 }
