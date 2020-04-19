@@ -41,7 +41,7 @@ public class AwareSettingsDialogPreference extends AwareDialogPreferenceBase {
                 R.styleable.Preference_allowDividerBelow, false);
         a.recycle();
 
-        setLayoutResource(R.layout.preference_single_target);
+        setLayoutResource(R.layout.category_preference);
     }
 
     public boolean isAvailable() {
