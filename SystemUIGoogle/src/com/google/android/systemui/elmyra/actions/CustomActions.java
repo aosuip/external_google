@@ -10,7 +10,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-import com.android.internal.util.titanium.TiUtils;
+import com.android.internal.util.aosuip.AosuipUtils;
 import com.android.systemui.Dependency;
 import com.android.systemui.assist.AssistManager;
 
